@@ -34,7 +34,7 @@ jobs:
       - name: Build Docker
         run: docker build --platform linux/amd64 -t ${{ secrets.DOCKERHUB_USERNAME }}/cicd_test .
       - name: Push Docker
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd_test:latest
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cicd_test:${{ github.sha }}
 
   deploy:
     needs: build

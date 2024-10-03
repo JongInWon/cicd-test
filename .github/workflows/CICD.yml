@@ -43,8 +43,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ steps.maven_version.outputs.VERSION }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/cicd_test:${{ steps.maven_version.outputs.VERSION }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/cicd_test:latest
 
   deploy:
     needs: build
